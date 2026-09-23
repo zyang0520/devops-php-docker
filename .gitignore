@@ -1,0 +1,14 @@
+# PHP
+/backend/vendor/
+/backend/composer.lock
+/backend/.phpunit.cache/
+
+# Node / Vite
+/frontend/node_modules/
+/frontend/dist/
+/frontend/package-lock.json
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

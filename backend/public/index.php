@@ -1,0 +1,20 @@
+<?php
+
+declare(strict_types=1);
+
+require dirname(__DIR__) . '/vendor/autoload.php';
+
+use App\HealthChecker;
+
+header('Access-Control-Allow-Origin: *');
+header('Content-Type: application/json');
+
+$path = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
+
+if ($path === '/api/health') {
+    echo json_encode((new HealthChecker())->status());
+    exit;
+}
+
+http_response_code(404);
+echo json_encode(['error' => 'not found']);
