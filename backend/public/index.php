@@ -16,5 +16,22 @@ if ($path === '/api/health') {
     exit;
 }
 
+if ($path === '/api/status') {
+	echo json_encode([
+		[
+			'start' => '2026-01-01',
+			'uptime'=> '2 days'
+		],
+		[
+			'start' => '2026-01-03',
+			'uptime'=> '2 days'
+		],
+		[
+			'start' => '2026-01-05',
+			'uptime'=> '2 days'
+		]
+	]);
+}
+
 http_response_code(404);
 echo json_encode(['error' => 'not found']);
