@@ -1,12 +1,13 @@
 # PHP
+# 注意：composer.lock 必须提交（CI 缓存 key + 可复现构建依赖它）
 /backend/vendor/
-/backend/composer.lock
 /backend/.phpunit.cache/
+/backend/.phpunit.result.cache
 
 # Node / Vite
+# 注意：package-lock.json 必须提交，否则 npm ci 直接失败
 /frontend/node_modules/
 /frontend/dist/
-/frontend/package-lock.json
 
 # OS / editor
 .DS_Store
